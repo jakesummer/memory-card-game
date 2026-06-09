@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import fetchData from "./fetchData.js";
+import fetchData from "./utils/fetchData.js";
 import Loading from "./components/Loading/Loading.jsx";
 
 function App() {
