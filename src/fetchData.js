@@ -27,8 +27,9 @@ export default async function fetchData() {
   return resultsArray.map((result) => {
     const data = result.collection.items["0"];
     return {
-      img: data.links["0"].href,
+      imgUrl: data.links["0"].href,
       title: data.data["0"].title,
+      id: crypto.randomUUID(),
     };
   });
 }
