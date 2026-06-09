@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import fetchData from "./fetchData.js";
+import Loading from "./components/Loading/Loading.jsx";
 
 function App() {
   const [apiStatus, setApiStatus] = useState({
@@ -35,7 +36,7 @@ function App() {
     return () => (ignore = true);
   }, []);
 
-  console.log(apiStatus);
+  return <>{apiStatus.isLoading && <Loading />}</>;
 }
 
 export default App;
