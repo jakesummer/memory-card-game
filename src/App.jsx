@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import fetchData from "./utils/fetchData.js";
+import shuffleArray from "./utils/shuffleArray.js";
 import Loading from "./components/Loading/Loading.jsx";
+import CardGrid from "./components/CardGrid/CardGrid.jsx";
 
 function App() {
   const [apiStatus, setApiStatus] = useState({
@@ -36,7 +38,14 @@ function App() {
     return () => (ignore = true);
   }, []);
 
-  return <>{apiStatus.isLoading && <Loading />}</>;
+  return (
+    <>
+      {apiStatus.isLoading && <Loading />}
+      {apiStatus.data.length > 0 && (
+        <CardGrid data={shuffleArray(apiStatus.data)} />
+      )}
+    </>
+  );
 }
 
 export default App;
