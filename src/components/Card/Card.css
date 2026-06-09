@@ -11,6 +11,16 @@
   cursor: pointer;
   container-type: inline-size;
   border-radius: 10px;
+  transition: transform 0.3s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-17px);
+}
+
+.card:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
 }
 
 .card img {
