@@ -1,0 +1,9 @@
+header {
+  color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}

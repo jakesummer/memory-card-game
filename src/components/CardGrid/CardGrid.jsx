@@ -3,17 +3,12 @@ import Card from "../Card/Card.jsx";
 import shuffleArray from "../../utils/shuffleArray.js";
 import "./CardGrid.css";
 
-export default function CardGrid({ data }) {
+export default function CardGrid({ data, onClick }) {
   const [shuffledData, setShuffledData] = useState(data);
-  const [clickedCardIds, setClickedCardIds] = useState([]);
 
   const handleClick = (cardId) => {
     setShuffledData(shuffleArray(shuffledData));
-    if (clickedCardIds.includes(cardId)) {
-      setClickedCardIds([]);
-    } else {
-      setClickedCardIds([...clickedCardIds, cardId]);
-    }
+    onClick(cardId);
   };
 
   return (
